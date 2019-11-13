@@ -15,3 +15,8 @@ main:
 	la $t0, user_input   #loads the address of the string
 	li $t1, 4  #initialized the variable to check if number of characters is > 4
 	li $t2, 32 #loaded a space here 
+	li $t3, 9 #loaded a tab here
+	
+	
+	
+	
