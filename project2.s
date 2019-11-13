@@ -7,3 +7,7 @@ invalid_input: .asciiz "Invalid Input"
 .text  #Assembly langugae instruction
 
 main:
+
+	li $v0, 8  #accepts user input
+	la $a0, user_input
+	syscall
