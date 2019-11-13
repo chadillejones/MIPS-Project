@@ -11,3 +11,6 @@ main:
 	li $v0, 8  #accepts user input
 	la $a0, user_input
 	syscall
+	
+	la $t0, user_input   #loads the address of the string
+	
