@@ -28,6 +28,9 @@ main:
 		beq $t5, $t6, leading_characters  #branch if character could be considered leading
 		
 	check_if_invalid:
+		blt $t4, $t7, print_invalid_input
+		bgt $t4, $t8, not_a_digit
+	
 	
 	print_invalid_input:
 	li $v0, 4
