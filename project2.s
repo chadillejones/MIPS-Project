@@ -38,6 +38,7 @@ main:
 		beq $t5, $t6, leading_characters  #branch if character could be considered leading
 		beq $t4, $t2, skip_trailing_tab_or_space #branches if leading character is equal to a space
 		beq $t4, $t3, skip_trailing_tab_or_space #branches if leading character is equal to a tab
+		beq $t4, $s5, valid_input #branches if a newline comes before a invalid character is entered
 		
 	check_if_invalid:
 		blt $t4, $t7, print_invalid_input #breaks if ascii of character is < 48
@@ -100,6 +101,7 @@ main:
 	bne $t4, $t3, print_invalid_input #if character after space for trailing is not a tab or space then print invalid
 	j skip_trailing_tab_or_space
 	
+	valid_input:
 	
 	
 	
