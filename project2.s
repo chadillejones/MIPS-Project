@@ -17,6 +17,8 @@ main:
 	li $t2, 32 #loaded a space here 
 	li $t3, 9 #loaded a tab here
 	
-	
+	loop: 
+		
+		lb $t4, 0($t0)  #gets a character of the string
 	
 	
