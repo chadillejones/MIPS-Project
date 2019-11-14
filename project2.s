@@ -16,7 +16,7 @@ main:
 	li $t1, 4  #initialized the variable to check if number of characters is > 4
 	li $t2, 32 #loaded a space here 
 	li $t3, 9 #loaded a tab here
-	li $t5, 0 #initialized count of valid characters #delete $t6 as $t5 can be used for its purpose
+	li $t5, 0 #initialized count of valid characters 
 	li $t6, 0 #initialized zero
 	
 	loop: 
@@ -33,7 +33,8 @@ main:
 	syscall  #tell the system this is the end of file 
 	
 	leading_characters:
-	beq $t4, $t2, skip_leading_tab_or_space #braches if leading character is equal to a space
+	beq $t4, $t2, skip_leading_tab_or_space #branches if leading character is equal to a space
+	beq $t4, $t3, skip_leading_tab_or_space #branches if leading character is equal to  a tab
 	
 	
 	
