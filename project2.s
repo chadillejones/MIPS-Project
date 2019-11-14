@@ -17,11 +17,12 @@ main:
 	li $t2, 32 #loaded a space here 
 	li $t3, 9 #loaded a tab here
 	li $t5, 0 #initialized count of valid characters #delete $t6 as $t5 can be used for its purpose
-	
+	li $t6, 0 #initialized zero
 	
 	loop: 
 		bgt $t5, $t1, print_invalid_output	#if number of valid characters is greater than 4 then print invalid output	
 		lb $t4, 0($t0)  #gets a character of the string
+		beq $t5, $t6, leading_characters
 		
 	print_invalid_output:
 	li $v0, 4
