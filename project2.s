@@ -103,12 +103,13 @@ main:
 	
 	valid_input:
 	
+	jal calculateBaseTen #subprogram to calculate the decimal number
 	
 	li $v0, 10
 	syscall  #tell the system this is the end of file
 
-	
-	
+	calculateBaseTen:
+	jr $ra
 	
 	
 	
