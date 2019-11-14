@@ -41,8 +41,10 @@ main:
 		bgt $t4, $t8, not_a_digit #breaks if ascii of character is > 57
 		addi $t4, $t4, -48 #makes the ascii for digit align with digits
 		sb $t4, 0($s4) #stores the character in a new string
+		lb $s5, 0($s4)
 		addi $s4, $s4, 1 #increments the address of the new array
 		addi $t0, $t0, 1 #increments the address of the input string
+		addi $t5, $t5, 1 #increments the amount of valid characters
 		j loop
 	
 	
@@ -72,6 +74,7 @@ main:
 	sb $t4, 0($s4) #stores the character in a new string
 	addi $s4, $s4, 1 #increments the address of the new array
 	addi $t0, $t0, 1 #increments the address of the input string
+	addi $t5, $t5, 1 #increments the amount of valid characters
 	j loop
 	
 	not_a_capital_letter:
@@ -81,6 +84,7 @@ main:
 	sb $t4, 0($s4) #stores the character in a new string
 	addi $s4, $s4, 1 #increments the address of the new array
 	addi $t0, $t0, 1 #increments the address of the input string
+	addi $t5, $t5, 1 #increments the amount of valid characters
 	j loop
 	
 	
