@@ -34,7 +34,12 @@ main:
 	
 	leading_characters:
 	beq $t4, $t2, skip_leading_tab_or_space #branches if leading character is equal to a space
-	beq $t4, $t3, skip_leading_tab_or_space #branches if leading character is equal to  a tab
+	beq $t4, $t3, skip_leading_tab_or_space #branches if leading character is equal to a tab
+	
+	
+	skip_leading_tab_or_space:
+	addi $t0, $t0, 1
+	j loop
 	
 	
 	
