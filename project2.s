@@ -62,7 +62,9 @@ main:
 	
 	not_a_capital_letter:
 	blt $t4, $s1, print_invalid_input #breaks if ascii of character is < 97
-	bgt $t4, $s2, not_a_common_letter #breaks if ascii of character is > 121
+	bgt $t4, $s2, print_invalid_input #breaks if ascii of character is > 121
+	
+	
 	
 	
 	
