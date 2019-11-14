@@ -25,7 +25,7 @@ main:
 	li $s0, 89 #highest possible capital letter ascii # =Y since N = 35
 	li $s1, 97 #lowest possible common letter ascii 
 	li $s2, 121 #highest possible common letter ascii = y since N = 35
-	 
+	li $s3, 0 #to sum all the digits 
 	
 	loop: 
 		bgt $t5, $t1, print_invalid_input	#if number of valid characters is greater than 4 then print invalid output	
