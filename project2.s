@@ -95,13 +95,17 @@ main:
 	lb $t4, 0($t0)  #gets a character of the string
 	beq $t4, $s5, valid_input #branches if only trailing tabs are spaces are found before newline
 	bne $t4, $t2, not_a_space #branches if character is not a space
-	j skip_trailing_tab_or_space
+	j skip_trailing_tab_or_space #returns to check next character for trailing tab or space
 	
 	not_a_space:
 	bne $t4, $t3, print_invalid_input #if character after space for trailing is not a tab or space then print invalid
-	j skip_trailing_tab_or_space
+	j skip_trailing_tab_or_space #returns to check the next character for trailing tab or space
 	
 	valid_input:
+	
+	
+	li $v0, 10
+	syscall  #tell the system this is the end of file
 
 	
 	
