@@ -1,5 +1,6 @@
 # Chadille Jones 
 # ID: @02856918
+# 2856918 % 11 = 9
 .data  #Section to declare data
 user_input: .space 2000
 invalid_input: .asciiz "Invalid Input"
@@ -18,6 +19,8 @@ main:
 	li $t3, 9 #loaded a tab here
 	li $t5, 0 #initialized count of valid characters 
 	li $t6, 0 #initialized zero
+	li $t7, 48 #lowest possible valid character
+	li
 	
 	loop: 
 		bgt $t5, $t1, print_invalid_output	#if number of valid characters is greater than 4 then print invalid output	
