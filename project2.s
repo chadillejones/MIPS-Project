@@ -22,7 +22,8 @@ main:
 	li $t7, 48 #lowest possible valid character ascii
 	li $t8, 57 #hightest possible non-letter digit ascii
 	li $t9, 65 #lowest possible capital letter ascii
-	li $s0, 89 #highest possible capital letter ascii # =Y since N = 35 
+	li $s0, 89 #highest possible capital letter ascii # =Y since N = 35
+	 
 	
 	loop: 
 		bgt $t5, $t1, print_invalid_input	#if number of valid characters is greater than 4 then print invalid output	
@@ -49,13 +50,15 @@ main:
 	
 	
 	
-	skip_leading_tab_or_space:
-	addi $t0, $t0, 1
+	skip_leading_tab_or_space: #skips character and goes to the next one
+	addi $t0, $t0, 1 
 	j loop
 	
 	not_a_digit:
 	blt $t4, $t9, print_invalid_input #breaks if ascii of character is < 65
 	bgt $t4, $s0, not_a_capital_letter #breaks if ascii of character is > 89
+	
+	not_a_capital_letter:
 	
 	
 	
