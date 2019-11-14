@@ -60,10 +60,12 @@ main:
 	not_a_digit:
 	blt $t4, $t9, print_invalid_input #breaks if ascii of character is < 65
 	bgt $t4, $s0, not_a_capital_letter #breaks if ascii of character is > 89
+	addi $t4, $t4, -55 #makes the ascii for digit align with capital letters
 	
 	not_a_capital_letter:
 	blt $t4, $s1, print_invalid_input #breaks if ascii of character is < 97
 	bgt $t4, $s2, print_invalid_input #breaks if ascii of character is > 121
+	addi $t4, $t4, -87 #makes the ascii for digit align with common letters
 	
 	
 	
