@@ -22,6 +22,10 @@ main:
 		bgt $t5, $t1, print_invalid_output	#if number of valid characters is greater than 4 then print invalid output	
 		lb $t4, 0($t0)  #gets a character of the string
 		
-	print_invalid_output #
+	print_invalid_output:
+	li $v0, 4
+	la $a0, invalid_input
+	syscall
+	
 	
 	
