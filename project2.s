@@ -21,7 +21,7 @@ main:
 	li $t1, 4  #initialized the variable to check if number of characters is > 4
 	li $t2, 32 #loaded a space here 
 	li $t3, 9 #loaded a tab here
-	li $t5, 0 #initialized count of valid characters 
+	li $a2, 0 #initialized count of valid characters #changed this to a2 so it can be passed to the subprogram
 	li $t6, 0 #initialized zero
 	li $t7, 48 #lowest possible valid character ascii
 	li $t8, 57 #hightest possible non-letter digit ascii
@@ -29,7 +29,7 @@ main:
 	li $s0, 89 #highest possible capital letter ascii # =Y since N = 35
 	li $s1, 97 #lowest possible common letter ascii 
 	li $s2, 121 #highest possible common letter ascii = y since N = 35
-	li $s3, 0 #to sum all the digits 
+	li $a3, 0 #to sum all the digits  #changed to a3 so that I can pass this to function
 	li $s5, 0x0A #initialized a new line
 	
 	loop: 
