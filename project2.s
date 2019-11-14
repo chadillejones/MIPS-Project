@@ -24,8 +24,12 @@ main:
 		
 	print_invalid_output:
 	li $v0, 4
-	la $a0, invalid_input
+	la $a0, invalid_input #prints "Invalid Output"
 	syscall
+	
+	li $v0, 10
+	syscall  #tell the system this is the end of file 
+	
 	
 	
 	
