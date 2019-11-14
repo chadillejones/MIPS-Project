@@ -92,12 +92,13 @@ main:
 	skip_trailing_tab_or_space:  #fucntion for checking if the rest of the code is all trailing tabs or spaces
 	addi $t0, $t0, 1 #move to the next byte
 	lb $t4, 0($t0)  #gets a character of the string
-	bne $t4, $t2, not_a_space #branches if character is not a space
 	beq $t4, $s5, valid_input #branches if only trailing tabs are spaces are found before newline
-	 
+	bne $t4, $t2, not_a_space #branches if character is not a space
+	j skip_trailing_tab_or_space
 	
-	
-	
+	not_a_space:
+	bne $t4, $t3, print_invalid_input #if character after space for trailing is not a tab or space then print invalid
+	j skip_trailing_tab_or_space
 	
 	
 	
