@@ -28,8 +28,8 @@ main:
 		beq $t5, $t6, leading_characters  #branch if character could be considered leading
 		
 	check_if_invalid:
-		blt $t4, $t7, print_invalid_input
-		bgt $t4, $t8, not_a_digit
+		blt $t4, $t7, print_invalid_input #breaks if ascii of character is < 48
+		bgt $t4, $t8, not_a_digit #breaks if ascii of character is > 57
 	
 	
 	print_invalid_input:
@@ -51,5 +51,6 @@ main:
 	addi $t0, $t0, 1
 	j loop
 	
+	not_a_digit
 	
 	
