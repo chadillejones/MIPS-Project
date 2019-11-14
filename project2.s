@@ -22,7 +22,7 @@ main:
 	loop: 
 		bgt $t5, $t1, print_invalid_output	#if number of valid characters is greater than 4 then print invalid output	
 		lb $t4, 0($t0)  #gets a character of the string
-		beq $t5, $t6, leading_characters
+		beq $t5, $t6, leading_characters  #branch if character could be considered leading
 		
 	print_invalid_output:
 	li $v0, 4
@@ -32,6 +32,8 @@ main:
 	li $v0, 10
 	syscall  #tell the system this is the end of file 
 	
+	leading_characters:
+	beq $t4, $t2, skip_leading_tab_or_space #braches if leading character is equal to a space
 	
 	
 	
