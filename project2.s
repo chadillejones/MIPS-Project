@@ -43,6 +43,7 @@ main:
 		sb $t4, 0($s4) #stores the character in a new string
 		addi $s4, $s4, 1 #increments the address of the new array
 		addi $t0, $t0, 1 #increments the address of the input string
+		j loop
 	
 	
 	print_invalid_input:
