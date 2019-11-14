@@ -16,7 +16,7 @@ main:
 	li $a1, 1001 #specify the length of the input #changed so the person can enter 10 characters and then enter button
 	syscall
 	
-	la $s4, list #load the address of the list
+	la $a1, list #load the address of the list #change the register to a1 so it can be passed to the subfunction
 	la $t0, user_input   #loads the address of the string
 	li $t1, 4  #initialized the variable to check if number of characters is > 4
 	li $t2, 32 #loaded a space here 
