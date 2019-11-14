@@ -1,6 +1,6 @@
 # Chadille Jones 
 # ID: @02856918
-# 2856918 % 11 = 9
+# 2856918 % 11 = 9 Base 35
 .data  #Section to declare data
 user_input: .space 2000
 invalid_input: .asciiz "Invalid Input"
@@ -35,6 +35,7 @@ main:
 	check_if_invalid:
 		blt $t4, $t7, print_invalid_input #breaks if ascii of character is < 48
 		bgt $t4, $t8, not_a_digit #breaks if ascii of character is > 57
+		addi $t4, $t4, -48 #makes the ascii for digit align with digits
 	
 	
 	print_invalid_input:
