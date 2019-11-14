@@ -90,6 +90,10 @@ main:
 	
 	skip_trailing_tab_or_space:  #fucntion for checking if the rest of the code is all trailing tabs or spaces
 	addi $t0, $t0, 1 #move to the next byte
+	lb $t4, 0($t0)  #gets a character of the string
+	beq $t4, $t2, skip_trailing_tab_or_space #branches if leading character is equal to a space
+	beq $t4, $t3, skip_trailing_tab_or_space #branches if leading character is equal to a tab
+	
 	
 	
 	
