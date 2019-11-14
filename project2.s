@@ -23,6 +23,8 @@ main:
 	li $t8, 57 #hightest possible non-letter digit ascii
 	li $t9, 65 #lowest possible capital letter ascii
 	li $s0, 89 #highest possible capital letter ascii # =Y since N = 35
+	li $s1, 97 #lowest possible common letter ascii 
+	li $s2, 121 #highest possible common letter ascii = y since N = 35
 	 
 	
 	loop: 
@@ -59,6 +61,7 @@ main:
 	bgt $t4, $s0, not_a_capital_letter #breaks if ascii of character is > 89
 	
 	not_a_capital_letter:
+	
 	
 	
 	
