@@ -88,6 +88,9 @@ main:
 	addi $t5, $t5, 1 #increments the amount of valid characters
 	j loop
 	
+	skip_trailing_tab_or_space:  #fucntion for checking if the rest of the code is all trailing tabs or spaces
+	addi $t0, $t0, 1 #move to the next byte
+	
 	
 	
 	
