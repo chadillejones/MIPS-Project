@@ -30,6 +30,7 @@ main:
 	li $s1, 97 #lowest possible common letter ascii 
 	li $s2, 121 #highest possible common letter ascii = y since N = 35
 	li $s3, 0 #to sum all the digits 
+	li $s5, 0x0A #initialized a new line
 	
 	loop: 
 		bgt $t5, $t1, print_invalid_input	#if number of valid characters is greater than 4 then print invalid output	
@@ -91,8 +92,10 @@ main:
 	skip_trailing_tab_or_space:  #fucntion for checking if the rest of the code is all trailing tabs or spaces
 	addi $t0, $t0, 1 #move to the next byte
 	lb $t4, 0($t0)  #gets a character of the string
-	beq $t4, $t2, skip_trailing_tab_or_space #branches if leading character is equal to a space
-	beq $t4, $t3, skip_trailing_tab_or_space #branches if leading character is equal to a tab
+	bne $t4, $t2, not_a_space #branches if character is not a space
+	beq $t4, $s5, valid_input #branches if only trailing tabs are spaces are found before newline
+	 
+	
 	
 	
 	
