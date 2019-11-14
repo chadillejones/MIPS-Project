@@ -35,12 +35,14 @@ main:
 		bgt $t5, $t1, print_invalid_input	#if number of valid characters is greater than 4 then print invalid output	
 		lb $t4, 0($t0)  #gets a character of the string
 		beq $t5, $t6, leading_characters  #branch if character could be considered leading
+		beq $t4, $t2, skip_trailing_tab_or_space #branches if leading character is equal to a space
+		beq $t4, $t3, skip_trailing_tab_or_space #branches if leading character is equal to a tab
 		
 	check_if_invalid:
 		blt $t4, $t7, print_invalid_input #breaks if ascii of character is < 48
 		bgt $t4, $t8, not_a_digit #breaks if ascii of character is > 57
 		addi $t4, $t4, -48 #makes the ascii for digit align with digits
-		sb $t4, 0($s4) #stores the character in a new string #deleted the lb as it was only to test the registers
+		sb $t4, 0($s4) #stores the character in a new string 
 		addi $s4, $s4, 1 #increments the address of the new array
 		addi $t0, $t0, 1 #increments the address of the input string
 		addi $t5, $t5, 1 #increments the amount of valid characters
