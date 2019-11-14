@@ -54,6 +54,10 @@ main:
 	j loop
 	
 	not_a_digit:
+	blt $t4, $t9, print_invalid_input #breaks if ascii of character is < 65
+	bgt $t4, $s0, not_a_capital_letter #breaks if ascii of character is > 90
+	
+	
 	
 	
 	
