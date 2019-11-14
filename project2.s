@@ -3,18 +3,20 @@
 # 2856918 % 11 = 9 Base 35
 .data  #Section to declare data
 user_input: .space 2000
+list: .word 0,0,0,0 #initialize a word list
 invalid_input: .asciiz "Invalid Input"
 
 .text  #Assembly langugae instruction
 .globl main
 
 main:
-
+	
 	li $v0, 8  #accepts user input
 	la $a0, user_input
 	li $a1, 1001 #specify the length of the input #changed so the person can enter 10 characters and then enter button
 	syscall
 	
+	la $s4, list #load the address of the list
 	la $t0, user_input   #loads the address of the string
 	li $t1, 4  #initialized the variable to check if number of characters is > 4
 	li $t2, 32 #loaded a space here 
