@@ -23,15 +23,15 @@ main:
 	li $t8, 57 #hightest possible non-letter digit ascii
 	
 	loop: 
-		bgt $t5, $t1, print_invalid_output	#if number of valid characters is greater than 4 then print invalid output	
+		bgt $t5, $t1, print_invalid_input	#if number of valid characters is greater than 4 then print invalid output	
 		lb $t4, 0($t0)  #gets a character of the string
 		beq $t5, $t6, leading_characters  #branch if character could be considered leading
 		
 	check_if_invalid:
 	
-	print_invalid_output:
+	print_invalid_input:
 	li $v0, 4
-	la $a0, invalid_input #prints "Invalid Output"
+	la $a0, invalid_input #prints "Invalid Input"
 	syscall
 	
 	li $v0, 10
