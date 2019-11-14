@@ -21,6 +21,8 @@ main:
 	li $t6, 0 #initialized zero
 	li $t7, 48 #lowest possible valid character ascii
 	li $t8, 57 #hightest possible non-letter digit ascii
+	li $t9, 65 #lowest possible capital letter ascii
+	li $s0, 90 #highest possible capital letter ascii
 	
 	loop: 
 		bgt $t5, $t1, print_invalid_input	#if number of valid characters is greater than 4 then print invalid output	
@@ -51,6 +53,7 @@ main:
 	addi $t0, $t0, 1
 	j loop
 	
-	not_a_digit
+	not_a_digit:
+	
 	
 	
