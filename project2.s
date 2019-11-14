@@ -42,6 +42,7 @@ main:
 		addi $t4, $t4, -48 #makes the ascii for digit align with digits
 		sb $t4, 0($s4) #stores the character in a new string
 		addi $s4, $s4, 1 #increments the address of the new array
+		addi $t0, $t0, 1 #increments the address of the input string
 	
 	
 	print_invalid_input:
@@ -69,6 +70,7 @@ main:
 	addi $t4, $t4, -55 #makes the ascii for digit align with capital letters
 	sb $t4, 0($s4) #stores the character in a new string
 	addi $s4, $s4, 1 #increments the address of the new array
+	addi $t0, $t0, 1 #increments the address of the input string
 	
 	not_a_capital_letter:
 	blt $t4, $s1, print_invalid_input #breaks if ascii of character is < 97
@@ -76,7 +78,7 @@ main:
 	addi $t4, $t4, -87 #makes the ascii for digit align with common letters
 	sb $t4, 0($s4) #stores the character in a new string
 	addi $s4, $s4, 1 #increments the address of the new array
-	
+	addi $t0, $t0, 1 #increments the address of the input string
 	
 	
 	
