@@ -71,6 +71,7 @@ main:
 	sb $t4, 0($s4) #stores the character in a new string
 	addi $s4, $s4, 1 #increments the address of the new array
 	addi $t0, $t0, 1 #increments the address of the input string
+	j loop
 	
 	not_a_capital_letter:
 	blt $t4, $s1, print_invalid_input #breaks if ascii of character is < 97
@@ -79,6 +80,7 @@ main:
 	sb $t4, 0($s4) #stores the character in a new string
 	addi $s4, $s4, 1 #increments the address of the new array
 	addi $t0, $t0, 1 #increments the address of the input string
+	j loop
 	
 	
 	
