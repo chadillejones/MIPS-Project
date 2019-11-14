@@ -41,6 +41,7 @@ main:
 		bgt $t4, $t8, not_a_digit #breaks if ascii of character is > 57
 		addi $t4, $t4, -48 #makes the ascii for digit align with digits
 		sb $t4, 0($s4) #stores the character in a new string
+		addi $s4, $s4, 1 #increments the address of the new array
 	
 	
 	print_invalid_input:
@@ -67,13 +68,14 @@ main:
 	bgt $t4, $s0, not_a_capital_letter #breaks if ascii of character is > 89
 	addi $t4, $t4, -55 #makes the ascii for digit align with capital letters
 	sb $t4, 0($s4) #stores the character in a new string
+	addi $s4, $s4, 1 #increments the address of the new array
 	
 	not_a_capital_letter:
 	blt $t4, $s1, print_invalid_input #breaks if ascii of character is < 97
 	bgt $t4, $s2, print_invalid_input #breaks if ascii of character is > 121
 	addi $t4, $t4, -87 #makes the ascii for digit align with common letters
 	sb $t4, 0($s4) #stores the character in a new string
-	
+	addi $s4, $s4, 1 #increments the address of the new array
 	
 	
 	
