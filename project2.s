@@ -123,7 +123,10 @@ main:
 	four_valid_chars:
 	li $t9, 42875
 	lb $t2, 0($a1) #load the first character of the valid numbers
-	multu $t9, 
+	multu $t9, $t2 #multiplying the character by the base number to a specific power
+	mflo $t9 #moves the answer to a register
+	add $a3, $a3, $t9 #adds it to the total sum
+	
 	
 	
 	
