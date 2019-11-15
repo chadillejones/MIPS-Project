@@ -138,6 +138,17 @@ main:
 	addi $a1, $a1, 1 #increment the character
 	j two_valid_chars
 	
+	two_valid_chars:
+	li $t7, 35
+	lb $t2, 0($a1) #load the first character of the valid numbers
+	multu $t7, $t2 #multiplying the character by the base number to a specific power
+	mflo $t7 #moves the answer to a register
+	add $a3, $a3, $t7 #adds it to the total sum
+	addi $a1, $a1, 1 #increment the character
+	j one_valid_char
+	
+	
+	
 	
 	
 	
