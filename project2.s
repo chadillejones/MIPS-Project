@@ -105,10 +105,15 @@ main:
 	li $a0, 35 #initialized the base number
 	jal calculateBaseTen #subprogram to calculate the decimal number
 	add $a1, $zero, $s4
+	sub $a1, $a1, $t5
 	li $v0, 10
 	syscall  #tell the system this is the end of file
 	
 	calculateBaseTen:
+	li $t6, 1
+	li $t7, 2
+	li $t8, 3
+	li $t9, 4
 	
 	jr $ra
 	
