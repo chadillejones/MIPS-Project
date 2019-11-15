@@ -103,9 +103,10 @@ main:
 	
 	valid_input:
 	li $a0, 35 #initialized the base number
+	add $a1, $zero, $s4 #move the word to $a1
+	sub $a1, $a1, $t5 #put the address to the first character
 	jal calculateBaseTen #subprogram to calculate the decimal number
-	add $a1, $zero, $s4
-	sub $a1, $a1, $t5
+	
 	li $v0, 10
 	syscall  #tell the system this is the end of file
 	
