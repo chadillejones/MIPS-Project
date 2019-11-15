@@ -102,7 +102,7 @@ main:
 	j skip_trailing_tab_or_space #returns to check the next character for trailing tab or space
 	
 	valid_input:
-	
+	li $a0, 35 #initialized the base number
 	jal calculateBaseTen #subprogram to calculate the decimal number
 	
 	li $v0, 10
