@@ -108,6 +108,10 @@ main:
 	sub $a1, $a1, $t5 #put the address to the first character
 	jal calculateBaseTen #subprogram to calculate the decimal number
 	
+	add $s6, $zero, $v0
+	li $v0, 1
+	move $a0, $s6
+	syscall #prints the result of the decimal equivalent to the base 35 number
 	
 	li $v0, 10
 	syscall  #tell the system this is the end of file
