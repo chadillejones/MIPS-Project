@@ -157,6 +157,7 @@ main:
 	mflo $t6 #moves the answer to a register
 	add $a3, $a3, $t6 #adds it to the total sum
 	addi $a1, $a1, 1 #increment the character
+	add $v0, $zero, $a1 #puts it in v0 so it can be returned
 	jr $ra #returns to valid input
 	
 	
