@@ -114,8 +114,16 @@ main:
 	li $t7, 2
 	li $t8, 3
 	li $t9, 4
-	
+	beq $a1, $t9,four_valid_chars #branch if there are 4 characters
+	beq $a1, $t8,three_valid_chars #branch if there are 3 characters
+	beq $a1, $t7,two_valid_chars #branch if there are 2 valid characters
+	beq $a1, $t6,one_valid_char #branch if there is one valid character
 	jr $ra
+	
+	four_valid_chars:
+	li $t9, 42875
+	lb $t2, 0($a1) #load the first character of the valid numbers
+	multu $t9, 
 	
 	
 	
