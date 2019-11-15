@@ -16,12 +16,12 @@ main:
 	li $a1, 1001 #specify the length of the input #changed so the person can enter 10 characters and then enter button
 	syscall
 	
-	la $a1, list #load the address of the list #change the register to a1 so it can be passed to the subfunction
+	la $s4, list #load the address of the list #reverted change
 	la $t0, user_input   #loads the address of the string
 	li $t1, 4  #initialized the variable to check if number of characters is > 4
 	li $t2, 32 #loaded a space here 
 	li $t3, 9 #loaded a tab here
-	li $a2, 0 #initialized count of valid characters #changed this to a2 so it can be passed to the subprogram
+	li $t5, 0 #initialized count of valid characters #reverted
 	li $t6, 0 #initialized zero
 	li $t7, 48 #lowest possible valid character ascii
 	li $t8, 57 #hightest possible non-letter digit ascii
@@ -104,7 +104,7 @@ main:
 	valid_input:
 	li $a0, 35 #initialized the base number
 	jal calculateBaseTen #subprogram to calculate the decimal number
-	
+	add $a1, $zero, $s4
 	li $v0, 10
 	syscall  #tell the system this is the end of file
 	
