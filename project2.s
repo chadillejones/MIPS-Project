@@ -118,7 +118,7 @@ main:
 	beq $a1, $t8,three_valid_chars #branch if there are 3 characters
 	beq $a1, $t7,two_valid_chars #branch if there are 2 valid characters
 	beq $a1, $t6,one_valid_char #branch if there is one valid character
-	jr $ra
+	
 	
 	four_valid_chars:
 	li $t9, 42875
@@ -154,7 +154,7 @@ main:
 	mflo $t6 #moves the answer to a register
 	add $a3, $a3, $t6 #adds it to the total sum
 	addi $a1, $a1, 1 #increment the character
-	jr $ra
+	jr $ra #returns to valid input
 	
 	
 	
