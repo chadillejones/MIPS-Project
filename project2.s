@@ -147,6 +147,15 @@ main:
 	addi $a1, $a1, 1 #increment the character
 	j one_valid_char
 	
+	one_valid_char:
+	li $t6, 35
+	lb $t2, 0($a1) #load the first character of the valid numbers
+	multu $t6, $t2 #multiplying the character by the base number to a specific power
+	mflo $t6 #moves the answer to a register
+	add $a3, $a3, $t6 #adds it to the total sum
+	addi $a1, $a1, 1 #increment the character
+	jr $ra
+	
 	
 	
 	
