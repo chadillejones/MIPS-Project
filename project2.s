@@ -126,6 +126,18 @@ main:
 	multu $t9, $t2 #multiplying the character by the base number to a specific power
 	mflo $t9 #moves the answer to a register
 	add $a3, $a3, $t9 #adds it to the total sum
+	addi $a1, $a1, 1 #increment the character
+	j three_valid_chars
+	
+	three_valid_chars:
+	li $t8, 1225
+	lb $t2, 0($a1) #load the first character of the valid numbers
+	multu $t8, $t2 #multiplying the character by the base number to a specific power
+	mflo $t8 #moves the answer to a register
+	add $a3, $a3, $t8 #adds it to the total sum
+	addi $a1, $a1, 1 #increment the character
+	j two_valid_chars
+	
 	
 	
 	
