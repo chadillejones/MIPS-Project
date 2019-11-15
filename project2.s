@@ -103,9 +103,11 @@ main:
 	
 	valid_input:
 	li $a0, 35 #initialized the base number
+	add $a2 ,$zero, $t5 #put the sum of characters in  a different variable
 	add $a1, $zero, $s4 #move the word to $a1
 	sub $a1, $a1, $t5 #put the address to the first character
 	jal calculateBaseTen #subprogram to calculate the decimal number
+	
 	
 	li $v0, 10
 	syscall  #tell the system this is the end of file
@@ -115,10 +117,10 @@ main:
 	li $t7, 2
 	li $t8, 3
 	li $t9, 4
-	beq $a1, $t9,four_valid_chars #branch if there are 4 characters
-	beq $a1, $t8,three_valid_chars #branch if there are 3 characters
-	beq $a1, $t7,two_valid_chars #branch if there are 2 valid characters
-	beq $a1, $t6,one_valid_char #branch if there is one valid character
+	beq $a2, $t9,four_valid_chars #branch if there are 4 characters
+	beq $a2, $t8,three_valid_chars #branch if there are 3 characters
+	beq $a2, $t7,two_valid_chars #branch if there are 2 valid characters
+	beq $a2, $t6,one_valid_char #branch if there is one valid character
 	
 	
 	four_valid_chars:
@@ -149,7 +151,7 @@ main:
 	j one_valid_char
 	
 	one_valid_char:
-	li $t6, 35
+	li $t6, 1
 	lb $t2, 0($a1) #load the first character of the valid numbers
 	multu $t6, $t2 #multiplying the character by the base number to a specific power
 	mflo $t6 #moves the answer to a register
